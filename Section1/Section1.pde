@@ -40,7 +40,7 @@ class Visualizer {
 
     //???WRITE THIS METHOD!!!
     for (int i=0; i<values.length; i++) {
-      if (values[i]<0) {
+      if (values[i]>0) {
         fill(255, 0, 0);
       } else {
         fill(0, 255, 0);
