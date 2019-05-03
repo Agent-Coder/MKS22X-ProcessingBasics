@@ -39,32 +39,30 @@ class Visualizer {
     //Positive values are green and go above the line.
 
     //???WRITE THIS METHOD!!!
-    for(int i=0;i<values.length;i++){
-      if(values[i]<0){
-        fill(255,0,0);
+    for (int i=0; i<values.length; i++) {
+      if (values[i]<0) {
+        fill(255, 0, 0);
+      } else {
+        fill(0, 255, 0);
       }
-      else{
-        fill(0,255,0);}
-      rect(x+(i*40),y+100,40,values[i]);
-      
+      rect(x+(i*40), y+100, 40, values[i]);
     }
     //THESE ARE WRONG: They just illustrate how they could look
 
 
 
     //Width of the visualizer is 400!
-
-  
   }
   void update() {
     //???WRITE THIS METHOD!!!
     for (int i = 0; i < values.length; i++) {
       values[i] += speeds[i];
+      if (abs(values[i])>=99) {
+        speeds[i]=-1*speeds[i];
+      }
       //??? keep them values between max/min value
 
       //??? reverse the speeds so they oscillate up/down when they reach max/min
-
-      
     }
   }
 }
