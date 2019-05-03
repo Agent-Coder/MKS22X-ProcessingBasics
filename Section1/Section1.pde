@@ -39,11 +39,17 @@ class Visualizer {
     //Positive values are green and go above the line.
 
     //???WRITE THIS METHOD!!!
+    for(int i=0;i<values.length;i++){
+      if(values[i]<0){
+        fill(255,0,0);
+      }
+      else{
+        fill(0,255,0);}
+      rect(x+(i*40),y+100,40,values[i]);
+      
+    }
     //THESE ARE WRONG: They just illustrate how they could look
-    fill(255, 0, 0);
-    rect(x+40, y+100, 60, 50);
-    fill(0, 255, 0);
-    rect(x+120, y+50, 60, 50);
+
 
 
     //Width of the visualizer is 400!
