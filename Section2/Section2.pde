@@ -36,9 +36,9 @@ void koch(int levels,float x1,float y1,float x2,float y2){
   float Uy=y2-y1;
   float Vx=y1-y2;
   float Vy=x2-x1;
-  stroke(255,255,255);
-  line(x1+Ux*1/3,y1+Uy*1/3,x1+Ux*2/3,y1+Uy*2/3);
   stroke(0,0,0);
+  line(x1+Ux*1/3,y1+Uy*1/3,x1+Ux*2/3,y1+Uy*2/3);
+  stroke(255);
   koch(levels-1,x1,y1,x1+Ux*1/3,y1+Uy*1/3);
   koch(levels-1,x1+Ux*2/3,y1+Uy*2/3,x2,y2);
   koch(levels-1,x1+Ux*1/3,y1+Uy*1/3,x1+Ux*1/2+(sqrt(3)/6)*Vx,y1+Uy*1/2+(sqrt(3)/6)*Vy);
@@ -47,15 +47,16 @@ void koch(int levels,float x1,float y1,float x2,float y2){
 }
   
 void draw() { 
-  background(255,255,255);  
+  background(0,0,0);  
   fill(255);
   text("Click the mouse to increase levels, press a key to decrease levles",20,20);
   if(levels>=0){
     triangle(0, height-10, width, height-10, width/2, 10);  
     gasket(levels-1,0, height-10, width, height-10, width/2, 10);
+    koch(levels,width-10, height/2,10, height/3 );
   }
   
- koch(levels,width-10, height/2,10, height/3 ); 
+  
  //other fractal you can do! This requires a bit more math, or you can look up the coordinates.
 }
 
